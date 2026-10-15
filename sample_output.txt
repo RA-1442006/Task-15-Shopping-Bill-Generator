@@ -1,0 +1,123 @@
+======================================================================
+SAMPLE OUTPUT 1: Normal Bill Without Discount (Subtotal < Rs. 1000)
+======================================================================
+
+PS C:\Users\realc\Documents\task-15-shopping-bill-generator> python shopping_bill.py
+=== Shopping Bill Generator ===
+Enter product name (or 'done' to finish): Notebook
+Enter quantity: 3
+Enter price per unit: 60
+Added 'Notebook' to cart.
+
+Enter product name (or 'done' to finish): Pen
+Enter quantity: 5
+Enter price per unit: 20
+Added 'Pen' to cart.
+
+Enter product name (or 'done' to finish): Pencil Box
+Enter quantity: 2
+Enter price per unit: 150
+Added 'Pencil Box' to cart.
+
+Enter product name (or 'done' to finish): done
+
+====================================================
+                   SHOPPING BILL                    
+====================================================
+Item                  Qty   Price       Total       
+----------------------------------------------------
+Notebook              3     Rs. 60.00   Rs. 180.00  
+Pen                   5     Rs. 20.00   Rs. 100.00  
+Pencil Box            2     Rs. 150.00  Rs. 300.00  
+----------------------------------------------------
+Subtotal:                                 Rs. 580.00
+Discount:                                   Rs. 0.00
+Tax (18% GST):                            Rs. 104.40
+====================================================
+Final Amount:                             Rs. 684.40
+====================================================
+
+
+======================================================================
+SAMPLE OUTPUT 2: Bill With 10% Discount Applied (Subtotal >= Rs. 1000)
+======================================================================
+
+PS C:\Users\realc\Documents\task-15-shopping-bill-generator> python shopping_bill.py
+=== Shopping Bill Generator ===
+Enter product name (or 'done' to finish): Backpack
+Enter quantity: 1
+Enter price per unit: 1200
+Added 'Backpack' to cart.
+
+Enter product name (or 'done' to finish): Water Bottle
+Enter quantity: 2
+Enter price per unit: 250
+Added 'Water Bottle' to cart.
+
+Enter product name (or 'done' to finish): done
+
+====================================================
+                   SHOPPING BILL                    
+====================================================
+Item                  Qty   Price       Total       
+----------------------------------------------------
+Backpack              1     Rs. 1200.00 Rs. 1200.00 
+Water Bottle          2     Rs. 250.00  Rs. 500.00  
+----------------------------------------------------
+Subtotal:                                Rs. 1700.00
+Discount:                                 Rs. 170.00
+Tax (18% GST):                            Rs. 275.40
+====================================================
+Final Amount:                            Rs. 1805.40
+====================================================
+
+
+======================================================================
+SAMPLE OUTPUT 3: Input Validation and Error Recovery
+======================================================================
+
+PS C:\Users\realc\Documents\task-15-shopping-bill-generator> python shopping_bill.py
+=== Shopping Bill Generator ===
+Enter product name (or 'done' to finish): 
+Product name cannot be empty. Please try again.
+Enter product name (or 'done' to finish): Notebook
+Enter quantity: abc
+Invalid quantity. Please enter a valid whole number.
+Enter quantity: 0
+Quantity must be greater than zero. Please try again.
+Enter quantity: -2
+Quantity must be greater than zero. Please try again.
+Enter quantity: 2
+Enter price per unit: xyz
+Invalid price. Please enter a valid number.
+Enter price per unit: -50
+Price cannot be negative. Please try again.
+Enter price per unit: 75
+Added 'Notebook' to cart.
+
+Enter product name (or 'done' to finish): done
+
+====================================================
+                   SHOPPING BILL                    
+====================================================
+Item                  Qty   Price       Total       
+----------------------------------------------------
+Notebook              2     Rs. 75.00   Rs. 150.00  
+----------------------------------------------------
+Subtotal:                                 Rs. 150.00
+Discount:                                   Rs. 0.00
+Tax (18% GST):                             Rs. 27.00
+====================================================
+Final Amount:                             Rs. 177.00
+====================================================
+
+
+======================================================================
+SAMPLE OUTPUT 4: Empty Cart (Immediate "done")
+======================================================================
+
+PS C:\Users\realc\Documents\task-15-shopping-bill-generator> python shopping_bill.py
+=== Shopping Bill Generator ===
+Enter product name (or 'done' to finish): done
+
+No items were added. No bill to generate.
